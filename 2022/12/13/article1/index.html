@@ -43,7 +43,7 @@
 <h4 id="虽然有数据集很大，但作者只用了-2018-2022年的数据作为训练数据。"><a href="#虽然有数据集很大，但作者只用了-2018-2022年的数据作为训练数据。" class="headerlink" title="虽然有数据集很大，但作者只用了 2018-2022年的数据作为训练数据。"></a>虽然有数据集很大，但作者只用了 2018-2022年的数据作为训练数据。</h4><p><code>df =  pd.read_csv(&quot;./kaggle/input/international-football-results-from-1872-to-2017/results.csv&quot;)</code></p>
 <p><code>df = df[(df[&quot;date&quot;] &gt;= &quot;2018-8-1&quot;)].reset_index(drop=True)</code></p>
 <p><img src="/../img/t4.png" alt="图4"></p>
-<h2 id="1-特征工程"><a href="#1-特征工程" class="headerlink" title="1. 特征工程"></a>1. 特征工程</h2><h4 id="选取的特征要能够较好地反映预测结果，如："><a href="#选取的特征要能够较好地反映预测结果，如：" class="headerlink" title="选取的特征要能够较好地反映预测结果，如："></a>选取的特征要能够较好地反映预测结果，如：</h4><ul>
+<h2 id="2-特征工程"><a href="#2-特征工程" class="headerlink" title="2. 特征工程"></a>2. 特征工程</h2><h4 id="选取的特征要能够较好地反映预测结果，如："><a href="#选取的特征要能够较好地反映预测结果，如：" class="headerlink" title="选取的特征要能够较好地反映预测结果，如："></a>选取的特征要能够较好地反映预测结果，如：</h4><ul>
 <li>世界杯球队的平均进球数</li>
 <li>球队最近5场比赛的平均进球数</li>
 <li>世界杯球队的平均犯规数</li>
@@ -65,6 +65,25 @@
 <p>对于值比较小的特征，可以尝试用箱型图观察。</p>
 </blockquote>
 <p><img src="/../img/t6.png" alt="图6"></p>
+<h4 id="最终特征如下："><a href="#最终特征如下：" class="headerlink" title="最终特征如下："></a>最终特征如下：</h4><ul>
+<li>rank_dif</li>
+<li>goals_dif</li>
+<li>goals_dif_l5</li>
+<li>goals_suf_dif</li>
+<li>goals_suf_dif_l5</li>
+<li>dif_rank_agst</li>
+<li>dif_rank_agst_l5</li>
+<li>goals_per_ranking_dif</li>
+<li>dif_points_rank</li>
+<li>dif_points_rank_l5</li>
+<li>is_friendly</li>
+</ul>
+<h2 id="3-建模"><a href="#3-建模" class="headerlink" title="3. 建模"></a>3. 建模</h2><h4 id="作者选择了随机森林和GradientBoosting模型进行训练，并对比他们的-AUC。"><a href="#作者选择了随机森林和GradientBoosting模型进行训练，并对比他们的-AUC。" class="headerlink" title="作者选择了随机森林和GradientBoosting模型进行训练，并对比他们的 AUC。"></a>作者选择了随机森林和GradientBoosting模型进行训练，并对比他们的 AUC。</h4><p><img src="/../img/t7.png" alt="图7"></p>
+<p><img src="/../img/t8.png" alt="图8"></p>
+<blockquote>
+<p>最终选取GradientBoosting作为预测模型。</p>
+</blockquote>
+<h2 id="4-预测"><a href="#4-预测" class="headerlink" title="4. 预测"></a>4. 预测</h2><h4 id="预测需要获取-2022-世界杯比赛数据。"><a href="#预测需要获取-2022-世界杯比赛数据。" class="headerlink" title="预测需要获取 2022 世界杯比赛数据。"></a>预测需要获取 2022 世界杯比赛数据。</h4><p><a target="_blank" rel="noopener" href="https://www.kaggle.com/code/sslp23/predicting-fifa-2022-world-cup-with-ml/notebook">2022 世界杯比赛数据</a></p>
 
     </div>
 
