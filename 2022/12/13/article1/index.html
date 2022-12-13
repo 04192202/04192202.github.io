@@ -33,10 +33,38 @@
         <hr>
     </div>
     <div class="post-content">
-        <hr>
-<p><code>今天看到Kaggle上有一个预测世界杯比赛结果的项目，截至目前4场比赛预测结果全中。把源码研究了一下，做了中文注释分享给大家。</code></p>
+        <p><strong>今天看到Kaggle上有一个预测世界杯比赛结果的项目，截至目前4场比赛预测结果全中。把源码研究了一下，做了中文注释分享给大家。</strong></p>
 <p><img src="/../img/t1.png" alt="图1"></p>
-<p><code>提醒大家，本文只做学习交流使用，不做决策参考，更不要盲目赌球。</code></p>
+<blockquote>
+<p>提醒大家，本文只做学习交流使用，不做决策参考，更不要盲目赌球。</p>
+</blockquote>
+<h2 id="1-获取数据集"><a href="#1-获取数据集" class="headerlink" title="1. 获取数据集"></a>1. 获取数据集</h2><h4 id="数据集使用-1872-2022年国际足球比赛数据和FIFA-1992-2022年球队排名数据。"><a href="#数据集使用-1872-2022年国际足球比赛数据和FIFA-1992-2022年球队排名数据。" class="headerlink" title="数据集使用 1872-2022年国际足球比赛数据和FIFA 1992-2022年球队排名数据。"></a>数据集使用 1872-2022年国际足球比赛数据和FIFA 1992-2022年球队排名数据。</h4><p><img src="/../img/t2.png" alt="比赛数据"></p>
+<p><img src="/../img/t3.png" alt="排名数据"></p>
+<h4 id="虽然有数据集很大，但作者只用了-2018-2022年的数据作为训练数据。"><a href="#虽然有数据集很大，但作者只用了-2018-2022年的数据作为训练数据。" class="headerlink" title="虽然有数据集很大，但作者只用了 2018-2022年的数据作为训练数据。"></a>虽然有数据集很大，但作者只用了 2018-2022年的数据作为训练数据。</h4><p><code>df =  pd.read_csv(&quot;./kaggle/input/international-football-results-from-1872-to-2017/results.csv&quot;)</code></p>
+<p><code>df = df[(df[&quot;date&quot;] &gt;= &quot;2018-8-1&quot;)].reset_index(drop=True)</code></p>
+<p><img src="/../img/t4.png" alt="图4"></p>
+<h2 id="1-特征工程"><a href="#1-特征工程" class="headerlink" title="1. 特征工程"></a>1. 特征工程</h2><h4 id="选取的特征要能够较好地反映预测结果，如："><a href="#选取的特征要能够较好地反映预测结果，如：" class="headerlink" title="选取的特征要能够较好地反映预测结果，如："></a>选取的特征要能够较好地反映预测结果，如：</h4><ul>
+<li>世界杯球队的平均进球数</li>
+<li>球队最近5场比赛的平均进球数</li>
+<li>世界杯球队的平均犯规数</li>
+<li>球队最近5场比赛的平均犯规数</li>
+<li>球队在世界杯中 FIFA 平均排名</li>
+<li>球队在最近5场比赛中 FIFA 平均排名</li>
+<li>FIFA积分</li>
+<li>最近5场FIFA积分</li>
+<li>比赛得分</li>
+<li>最近5场比赛得分</li>
+<li>比赛得分（按排名）</li>
+<li>最近5场比赛平均得分（按排名）</li>
+</ul>
+<blockquote>
+<p>通过观察这些特征的小提琴图，筛选对预测结果又很强区分的特征。</p>
+</blockquote>
+<p><img src="/../img/t5.png" alt="图5"></p>
+<blockquote>
+<p>对于值比较小的特征，可以尝试用箱型图观察。</p>
+</blockquote>
+<p><img src="/../img/t6.png" alt="图6"></p>
 
     </div>
 
