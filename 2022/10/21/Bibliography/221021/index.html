@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>基于模糊故障树的发动机失效模式分析 | ClancyCC</title><meta name="author" content="ClancyCC"><meta name="copyright" content="ClancyCC"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="侯金丽，基于模糊故障树的可重复使用火箭发动机失效模式分析[D]，北京航空航天大学，2012. 原文链接: 无  文章思路 🔺Chapter 1-2 故障树分析法就是在系统设计过程中，通过对可能造成系统故障的各种因素(包括硬件、软件、环境、人为因素等)进行分析，画出逻辑框图(即故障树)，从而确定系统故障原因的各种可能组合及其发生概率，以计算系统故障概率，采取相应的纠正措施，提高系统可靠性的一种设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于模糊故障树的发动机失效模式分析">
+<meta property="og:url" content="https://clancycc.github.io/2022/10/21/Bibliography/221021/index.html">
+<meta property="og:site_name" content="ClancyCC">
+<meta property="og:description" content="侯金丽，基于模糊故障树的可重复使用火箭发动机失效模式分析[D]，北京航空航天大学，2012. 原文链接: 无  文章思路 🔺Chapter 1-2 故障树分析法就是在系统设计过程中，通过对可能造成系统故障的各种因素(包括硬件、软件、环境、人为因素等)进行分析，画出逻辑框图(即故障树)，从而确定系统故障原因的各种可能组合及其发生概率，以计算系统故障概率，采取相应的纠正措施，提高系统可靠性的一种设">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://clancycc.github.io/2022/10/21/Bibliography/221021/1.jpg">
+<meta property="article:published_time" content="2022-10-21T12:13:00.000Z">
+<meta property="article:modified_time" content="2022-10-21T12:13:00.000Z">
+<meta property="article:author" content="ClancyCC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://clancycc.github.io/2022/10/21/Bibliography/221021/1.jpg"><link rel="shortcut icon" href="/img/icon_JLLJ.png"><link rel="canonical" href="https://clancycc.github.io/2022/10/21/Bibliography/221021/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="9eU0cX-hA0E9CraoJpb6hliI6Aju-pcMWbF9MsmCyaw"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基于模糊故障树的发动机失效模式分析',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-21 20:13:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/JLLJ.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/2022/10/21/Bibliography/221021/1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ClancyCC</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">基于模糊故障树的发动机失效模式分析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-21T12:13:00.000Z" title="发表于 2022-10-21 20:13:00">2022-10-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-21T12:13:00.000Z" title="更新于 2022-10-21 20:13:00">2022-10-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/">文献阅读</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>侯金丽，基于模糊故障树的可重复使用火箭发动机失效模式分析[D]，北京航空航天大学，2012.<br>
+原文链接: 无</p>
+</blockquote>
+<h1>文章思路</h1>
+<h2 id="🔺Chapter-1-2">🔺Chapter 1-2</h2>
+<p>故障树分析法就是在系统设计过程中，通过对可能造成系统故障的各种因素(包括硬件、软件、环境、人为因素等)进行分析，画出逻辑框图(即故障树)，从而确定系统故障原因的各种可能组合及其发生概率，以计算系统故障概率，采取相应的纠正措施，提高系统可靠性的一种设计分析方法。<br>
+模糊故障树分析(Fuzzy Fault Tree Analysis，简称 FFTA)针对故障树分析法中底事件和顶事件发生概率的不确定性问题，采用模糊概率取代传统可靠性分析中精确的概率值，并根据模糊数学中的扩张原理，将系统中每一个底事件的失效模糊概率用梯形模糊数来描述，模糊数之间的乘积运算采用近似处理，然后在传统重要度的基础上定义一个函数来刻画每一底事件对顶事件发生的贡献，从而确定底事件的模糊重要程度。</p>
+<p>故障树的分析步骤:</p>
+<ol>
+<li>选择顶事件，理清故障结果和故障原因之间的关系；</li>
+<li>明确各个底事件的精确概率，没有精确概率的采用模糊概率；</li>
+<li>概率值转化为三角/梯形模糊数；</li>
+<li>定性分析得到最小割集；</li>
+<li>计算底事件的模糊重要度；</li>
+<li>对计算结果分析，获得结论</li>
+</ol>
+<h2 id="🔺Chapter-3">🔺Chapter 3</h2>
+<h3 id="♦️-3-1">♦️ 3-1</h3>
+<p>以主燃烧室故障概率为例，可以得到故障树和发生的模糊概率如下：<br>
+<img src="1.jpg" alt="主燃烧室故障树"><br>
+<img src="2.jpg" alt="主燃烧室故障树底事件发生的模糊概率"></p>
+<p>计算由顶事件模糊概率公式及三角模糊数可算得顶事件的模糊概率为：<br>
+F(t)=[ 5.81E-04+6.40E-05λ，7.10E-04-6.5E-05λ]<br>
+顶事件发生故障概率区间为5.81E-04~7.10E-04，最可能发生故障的概率为6.45E-04。<br>
+综合所有部件的所有底事件之后，就可以求出顶事件的故障概率（即整个系统的可靠性，是一个范围）。把各个底事件的发生概率除以顶事件的发生概率再乘以概率重要度就可以得到底事件的关键重要度，对此进行排序可以明确系统中容易发生故障的组件和主要故障原因。<br>
+为简化建树及定性、定量分析的繁琐工作，本文开发一款计算机辅助建树软件，实现故障树最小割集的自动计算和快速定量分析，节省了大量计算资源和时间。</p>
+<h3 id="♦️-3-2">♦️ 3-2</h3>
+<p>系统的故障征兆和故障原因是存在因果关系的，本文就用模糊诊断矩阵来建立它们之间的关系，把故障征兆向量乘以模糊诊断矩阵就可以得到故障原因向量，进而分析一个顶事件发生在各个故障原因上的分布。<br>
+文中把记模糊矩阵为R，其中第k行第j列的元素记作<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>I</mi><mrow><mi>k</mi><mi>j</mi></mrow><mrow><mi>F</mi><mi>V</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">I_{kj}^{FV}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2605em;vertical-align:-0.4192em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-2.4169em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">kj</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4192em;"><span></span></span></span></span></span></span></span></span></span>。可以把<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mrow><mi>k</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">I_{kj}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">kj</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>理解为当第k个故障征兆（即现象）发生的原因是第j个原因的“概率”，但是这个“概率”实际上使用FV重要度表示的。<br>
+例如推力室故障中，可能的四个征兆依次是无推力、推力异常、温度异常、起火；故障原因有四个依次是主喷注器故障、喷管故障、泄露、燃烧室身部故障。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>I</mi><mn>13</mn><mrow><mi>F</mi><mi>V</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">I_{13}^{FV}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0894em;vertical-align:-0.2481em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-2.4519em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">13</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2481em;"><span></span></span></span></span></span></span></span></span></span>是出现无推力的现象时泄露导致的“概率”（FV重要度）。<br>
+至于FV重要度的定义，可以直接由公式（3.7）和（3.8）表示。</p>
+<h2 id="🔺Chapter-4">🔺Chapter 4</h2>
+<p>因为可重复使用火箭发动机系统在实际上会呈现出很多状态而不是只有二态，所以本文引入了多态系统故障树，就可以关注到二态故障树容易忽略的安全隐患。<br>
+尽管不能完全理解长篇的公式推导，但是可以确定的是，这种多态系统故障树是想解释非独立组件之间的偶尔关系处理方法，从而直观地评价耦合关系对组件、系统失效概率的影响程度。例如涡轮泵故障率增大预燃室的故障率也增大，但是预燃室故障率增大涡轮泵却不变。这种“不互相依赖”的关系可以在多态系统故障树之中得到体现。<br>
+在明确组件的耦合关系式后，当组件失效发生变化时，系统故障率的变化率会明显放大，这在精确预估系统故障率时需要得到高度重视。</p>
+<h2 id="🔺Chapter-5-6">🔺Chapter 5-6</h2>
+<p>此外，原文粗略统计了 SSME 各主要组件发生故障的部件、失效模式、故障原因、危险等级及相应的改进方法建议，这是基于故障树和多态系统共同分析得到的结果。<br>
+由于仅靠故障树和多态系统还并不能建立一套完整的系统失效模式评估体系，因此引入了因子化排序方法。它综合考虑了影响发动机可靠性的风险因子、时间因子和概率因子，用假定的公式把各种失效模式的影响程度量化了。因此可以排序，可以和纯概率分析的结果对比，就能实现更加全面的评估。</p>
+<h1>总结</h1>
+<ol>
+<li>结合故障树和模糊理论建立模糊故障树，并罗列一大部分组件和系统的故障—危险-原因-建议；</li>
+<li>引入多态系统解释耦合关系，更好地分析系统可靠性；</li>
+<li>引入因子化排序方法，全面且体系化；</li>
+<li>开发了一款分析软件，能完成故障树的建立与分析工作。</li>
+</ol>
+<style>
+    p img{
+        border: solid lightblue 1px;
+    }
+</style></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://clancycc.github.io">ClancyCC</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://clancycc.github.io/2022/10/21/Bibliography/221021/">https://clancycc.github.io/2022/10/21/Bibliography/221021/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://clancycc.github.io" target="_blank">ClancyCC</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/2022/10/21/Bibliography/221021/1.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/ShareJS/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/ShareJS/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/24/Bibliography/221023/"><img class="prev-cover" src="/2022/10/24/Bibliography/221023/01.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">液体火箭发动机结构可靠性仿真及评估方法</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/20/Bibliography/221020/"><img class="next-cover" src="/2022/10/20/Bibliography/221020/1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">夹芯梁寿命预估模型</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/JLLJ.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ClancyCC</div><div class="author-info__description">尝试热爱生活！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ClancyCC" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.zhihu.com/people/zhu-qing-cheng" target="_blank" title="zhihu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="mailto:zqc867342167@gmail.com" target="_blank" title="Email:zqc867342167@gmail.com"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">文章思路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%BAChapter-1-2"><span class="toc-text">🔺Chapter 1-2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%BAChapter-3"><span class="toc-text">🔺Chapter 3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%99%A6%EF%B8%8F-3-1"><span class="toc-text">♦️ 3-1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%99%A6%EF%B8%8F-3-2"><span class="toc-text">♦️ 3-2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%BAChapter-4"><span class="toc-text">🔺Chapter 4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%BAChapter-5-6"><span class="toc-text">🔺Chapter 5-6</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/30/Bibliography/221030/" title="某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析"><img src="/2022/10/30/Bibliography/221030/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析"/></a><div class="content"><a class="title" href="/2022/10/30/Bibliography/221030/" title="某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析">某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析</a><time datetime="2022-10-30T15:59:00.000Z" title="更新于 2022-10-30 23:59:00">2022-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/26/Bibliography/221026/" title="蒙特卡洛方法/灵敏度分析/正态性检验"><img src="/2022/10/26/Bibliography/221026/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="蒙特卡洛方法/灵敏度分析/正态性检验"/></a><div class="content"><a class="title" href="/2022/10/26/Bibliography/221026/" title="蒙特卡洛方法/灵敏度分析/正态性检验">蒙特卡洛方法/灵敏度分析/正态性检验</a><time datetime="2022-10-28T15:59:00.000Z" title="更新于 2022-10-28 23:59:00">2022-10-28</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2022 By ClancyCC</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="/pluginsSrc/katex/dist/katex.min.css"><script src="/pluginsSrc/katex/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="/pluginsSrc/katex/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '3Cc9dQ6tYozmndx61LzWR8Q9-gzGzoHsz',
+      appKey: '7P0KFSu16TPeGa4SeFt8zvgv',
+      avatar: 'monsterid',
+      serverURLs: 'https://3cc9dq6t.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('/pluginsSrc/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><link rel="service workers_delete" href="/js/sw_delete.js"><script src="/pluginsSrc/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = false;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/qq2vbwkt5or4kfzsneq1etvxxeemubrw.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="js/githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://gitcalendar.zfe.space/api?ClancyCC";
+            var git_color =['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'];
+            var git_user ="ClancyCC";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>

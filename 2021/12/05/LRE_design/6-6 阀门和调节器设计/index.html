@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>6/6 阀门和调节器设计 | ClancyCC</title><meta name="author" content="ClancyCC"><meta name="copyright" content="ClancyCC"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="❀❀❀❀完结撒花❀❀❀❀ 本书为北航蔡国飙先生团队的《液体火箭发动机设计》，其系统讲述液体火箭发动机系统、推力室、燃气发生器、涡轮泵及阀门和调节器的设计，理论联系实际，反映了当前液体火箭发动机设计的新技术和新成就。 从十一月十八日至今，已完成全部的更新。有很多不足的地方，也有不少地方笔者自己也没有看懂，选择了跳过。后续可能会查漏补缺，再添加一些内容。该系列之作自己学习纪念之用，希望未来能有长足进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6&#x2F;6 阀门和调节器设计">
+<meta property="og:url" content="https://clancycc.github.io/2021/12/05/LRE_design/6-6%20%E9%98%80%E9%97%A8%E5%92%8C%E8%B0%83%E8%8A%82%E5%99%A8%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="ClancyCC">
+<meta property="og:description" content="❀❀❀❀完结撒花❀❀❀❀ 本书为北航蔡国飙先生团队的《液体火箭发动机设计》，其系统讲述液体火箭发动机系统、推力室、燃气发生器、涡轮泵及阀门和调节器的设计，理论联系实际，反映了当前液体火箭发动机设计的新技术和新成就。 从十一月十八日至今，已完成全部的更新。有很多不足的地方，也有不少地方笔者自己也没有看懂，选择了跳过。后续可能会查漏补缺，再添加一些内容。该系列之作自己学习纪念之用，希望未来能有长足进">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://clancycc.github.io/img/%E6%B6%B2%E5%8F%91/%E7%BB%AA%E8%AE%BA.jpg">
+<meta property="article:published_time" content="2021-12-04T17:51:00.000Z">
+<meta property="article:modified_time" content="2022-03-26T15:58:38.766Z">
+<meta property="article:author" content="ClancyCC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://clancycc.github.io/img/%E6%B6%B2%E5%8F%91/%E7%BB%AA%E8%AE%BA.jpg"><link rel="shortcut icon" href="/img/icon_JLLJ.png"><link rel="canonical" href="https://clancycc.github.io/2021/12/05/LRE_design/6-6%20%E9%98%80%E9%97%A8%E5%92%8C%E8%B0%83%E8%8A%82%E5%99%A8%E8%AE%BE%E8%AE%A1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="9eU0cX-hA0E9CraoJpb6hliI6Aju-pcMWbF9MsmCyaw"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '6/6 阀门和调节器设计',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-26 23:58:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/JLLJ.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/%E6%B6%B2%E5%8F%91/%E7%BB%AA%E8%AE%BA.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ClancyCC</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">6/6 阀门和调节器设计</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-04T17:51:00.000Z" title="发表于 2021-12-05 01:51:00">2021-12-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-26T15:58:38.766Z" title="更新于 2022-03-26 23:58:38">2022-03-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E3%80%8A%E6%B6%B2%E4%BD%93%E7%81%AB%E7%AE%AD%E5%8F%91%E5%8A%A8%E6%9C%BA%E8%AE%BE%E8%AE%A1%E3%80%8B/">《液体火箭发动机设计》</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>❀❀❀❀完结撒花❀❀❀❀<br>
+本书为北航蔡国飙先生团队的《液体火箭发动机设计》，其系统讲述液体火箭发动机系统、推力室、燃气发生器、涡轮泵及阀门和调节器的设计，理论联系实际，反映了当前液体火箭发动机设计的新技术和新成就。<br>
+从十一月十八日至今，已完成全部的更新。有很多不足的地方，也有不少地方笔者自己也没有看懂，选择了跳过。后续可能会查漏补缺，再添加一些内容。该系列之作自己学习纪念之用，希望未来能有长足进步。</p>
+</blockquote>
+<p>以下为相关复习思考题：</p>
+<h2 id="6-1-发动机阀门的定义及其功能是什么？">6-1 发动机阀门的定义及其功能是什么？</h2>
+<p>在液体火箭发动机系统中，将控制工质流动或调节工质参数的组件称为阀门（简称阀），其主要作用是保障发动机启动前的准备工作、过渡过程（启动、转级、关机）和调节过程等都能顺利进行。</p>
+<h2 id="6-2-阀门按功能可分为哪几类？">6-2 阀门按功能可分为哪几类？</h2>
+<p>液体火箭发动机上使用的阀门就其功能可分为：用来控制发动机工作过程，具有导流、截止、止回、溢流和卸压等作用的阀门，如启动阀、断流阀、单向阀、泄出阀和卸压阀等；用来调节发动机主要性能参数的阀门，通常称为调节器或调节阀，如减压器、压力调节器和节流圈等。</p>
+<h2 id="6-3-简述发动机控制系统设计的基本步骤。">6-3 简述发动机控制系统设计的基本步骤。</h2>
+<p>①选择控制方法。包括开环控制和闭环控制。<br>
+② 选择具体的调节方案。根据要求选择几个方案进行综合比较，包括可靠性、调节精度、动态品质和结构复杂性等。<br>
+③确定阀门参数. 在额定条件和极限工况下，确定流量和压力等参数。<br>
+④确定阀门组件。包括结构类型、控制方式和动力源等。<br>
+⑤进行系统和组件的静动态特性分析。<br>
+⑥进行结构设计。<br>
+⑦进行生产和试验。</p>
+<h2 id="6-4-阀门和调节器的分类方式有哪些？">6-4 阀门和调节器的分类方式有哪些？</h2>
+<p>阀门：按用途及功能分类、按阀门使用次数分类、按作动器能源分类、按阀门正常或初始位置分类、按密封原理分类、按阀门结构类型分类<br>
+调节器：按用途分类，按被调参数分类，按工作流体的不同分类、按结构的不统分类、按敏感元件的不统分类</p>
+<h2 id="6-5-简述阀门的工作条件。">6-5 简述阀门的工作条件。</h2>
+<p>在液体火箭发动机上，阀门的工作条件基本可分为三类：运输、贮存条件以及环境条件和发动机工作条件。<br>
+在运输过程中，阀门要经受振动和冲击的作用；在地面贮存时，阀门要经受地面环境如温度和湿度等的影响；在航天器飞行期间，阀门还要经历外界环境温度和压力变化的影响；在发动机工作期间，阀门受到发动机本身的振动条件和推力室热回侵所造成的急剧温度梯度的影响。此外，在发动机贮存和工作期间，阀门还会受到推进剂的腐蚀或工质的压力和温度的影响。</p>
+<h2 id="6-6-简述阀门的基本设计要求。">6-6 简述阀门的基本设计要求。</h2>
+<p>密封性、介质相容性、动作相应时间、工作稳定性和重复性</p>
+<h2 id="6-7-阀门设计的主要因素有哪些？">6-7 阀门设计的主要因素有哪些？</h2>
+<p>流动介质、压降和流通能力、流量特性、工作温度、工作压力、泄漏率、响应速度、工作寿命和安装尺寸等。这些因素并非是独立的，在研究任何一项设计因素时，都必须考虑各因素之间的相互影响。<br>
+可将上述因素分为以下两类:规定因素，即包括流动介质、工作压力、工作温度和流量特性等;设计指标，即包括压降、泄漏率、响应时间、工作寿命和安装尺寸等。为满足关键的设计要求，有时需要适当放松某种设计因素的指标，但也不会影响阀门的工作性能。</p>
+<h2 id="6-8-试分析断流阀门（蝶形阀、菌形阀、电爆阀）的功能、结构和工作过程。">6-8 试分析断流阀门（蝶形阀、菌形阀、电爆阀）的功能、结构和工作过程。</h2>
+<p>蝶形阀门是指阀芯为圆盘，能随传递旋转运动的轴旋转以达到开启与关闭作用的一种阀门、，可分一次使用和多次使用两种。蝶形阀门具有较低的流体阻力，结构紧凑，质量小,使用方便。蝶形阀门关闭的速度较小，对管路冲击也小，因此是大推力液体火箭发动机中使用最广泛的阀门类型之一。<img src="/img/%E6%B6%B2%E5%8F%91/image033.png" alt=""><br>
+菌形阀门是用气压控制的常闭式阀门。阀门做往复运动，可以直接与作动器连接，菌形阀门结构较简单，使用广泛，如在“土星”5 号火箭的第一级F—1 发动机和长征运载火箭上面级发动机上的使用等。但是，由于这种阀门的结构使液体在内部通道中转弯，因而压力损失较大。<br>
+电爆阀门装有质量小、能量高的能源，如电爆管，在给定指令下发生爆燃，将潜在的化学能转变为机械能，实现阀门的打开或关闭。液体火箭发动机中常用的电爆阀门有常开式和常闭式，这种阀门与一般阀门相比，具有结构简单、反应速度快、可靠性高和制造成本低等优点。其主要缺点是：当装到发动机上之后，不能对阀门的动作协调情况进行检验,从而使可靠性降低,此外，在每一次调整试车后都必须把发动机从试车台上卸下来，以便给电爆阀门重新安装电爆管，这使得发动机的重复启动试车过程复杂化。<img src="/img/%E6%B6%B2%E5%8F%91/image034.png" alt=""></p>
+<h2 id="6-9-试分析隔离阀门（膜片式蝶形阀、球形阀等）的功能、结构和工作过程。">6-9 试分析隔离阀门（膜片式蝶形阀、球形阀等）的功能、结构和工作过程。</h2>
+<p>隔离阀门通常安装在发动机入口管路系统中，其主要作用是:将发动机管路与箭体供应管路隔开;在自燃推进剂发动机中，起到启动阀门的作用；泻出贮箱到隔离阀门间的推进剂，起到组合阀门的作用；作为箭体贮箱和推进剂供应管路密封试验的密封装置。因此，隔离阀门多数为一次工作的膜片式阀。<img src="/img/%E6%B6%B2%E5%8F%91/image035.png" alt=""><br>
+如图6. 7 所示，当发动机启动时,安装在电爆管安装座上的电爆管通电工作，瞬间产生的高压火药燃气作用在活塞上，活塞在高压燃气的作用下迅速猛烈地撞击在下阀盘的凸块上，使上阀盘从圆周一圈的刻痕处(此处强度最差)撕开，于是整个阀门盘在活塞撞击力作用下迅速打开，当阀门转到90°位置时被止动轴上边的凸块挡住，此时限位销也随阀门盘转动，且恰好落入止动轴中部的限位槽内，从而将阀门盘锁死，使阀门盘不能来回摆动，也不能复原关闭。<br>
+膜片阀门主要由上、下壳体夹住一个膜片所组成，当上游压力达到预定值时膜片破裂的称为自然破裂膜片。为控制膜片的破裂压力值和破裂部位，一般均在膜片上用冲压方法预制一定形状的刻痕，这也起到防止膜片破裂处掉屑的作用。<img src="/img/%E6%B6%B2%E5%8F%91/image036.png" alt=""><br>
+由于球形阀门可装入导管内，不限制液体流动，故一般压力损失很小，同时还可以增加高压装置结构的坚固性，如美国航天飞机主发动机采用的液氧球形阀门。对于大直径的阀门，由于它难以满足飞行质量和外形要求，故应用并不普遍。但对于地面上的使用设备，由于对阀门的质量和尺寸要求并不很严，因此，多种多样的球形阀门还是经常采用的。<img src="/img/%E6%B6%B2%E5%8F%91/image037.png" alt=""></p>
+<h2 id="6-10-试分析其他阀门（电动气阀和电磁阀）的功能、结构和工作过程。">6-10 试分析其他阀门（电动气阀和电磁阀）的功能、结构和工作过程。</h2>
+<p>电动气阀门的工作原理如图6.12所示，阀门本体上有一个进气口B ,一个出气口C 和一个排气口D。当电磁铁断电时，由进气口В 进入压缩气体，通过开启的副阀芯，经流道H进入М腔，使主阀芯7打开，另一主阀芯5关闭，压缩气体由进气口В沿出气口С流出，给其他气动阀门提供高压气体。当电磁铁通电时，电磁力通过顶杆传给副阀芯，使副阀芯关闭，同时打开排气孔,М腔中的压缩气体沿流道Н流到排气孔排出，电动气阀门主阀芯7关闭，另一主阀芯5打开，接通出气口С和排气口D,气动阀门中的压缩气体通过排气口D泄出。<img src="/img/%E6%B6%B2%E5%8F%91/image038.png" alt=""><br>
+电磁阀门是某些液体火箭发动机和地面附属设备中的一个重要组件，是一种由电磁线圈作动器控制的阀门。液体火箭发动机工作时间长，容易实现变推力，能够多次启动，可实现较高频率的脉冲工作。目前，大多数姿轨控发动机均采用液体火箭发动机,其系统方案多采用挤压式，为了实现多次反复启动或高频脉冲工作，系统中多采用电磁阀门来控制流量。当线圈组件3通电后产生电磁感应，磁铁产生吸力吸引衔铁,从而克服弹簧5的作用力，驱动阀芯6运动，实现开启。当断电时，在弹簧5和流体作用下使阀芯6关闭。<img src="/img/%E6%B6%B2%E5%8F%91/image039.png" alt=""></p>
+<h2 id="6-11-调节器的主要设计要求有哪些？">6-11 调节器的主要设计要求有哪些？</h2>
+<p>①流量特性应满足设计要求，其流量特性可通过节流元件的几何形状和位置来实现，一般要求其固有的流量特性为线性，即被调参数与控制信号之间呈线性关系。<br>
+②要求被调参数的进、回程特性偏差（即滞后）尽量小。<br>
+③增益或灵敏度要高，即要求流量变化与相应阀芯行程变化的比值要适当大些。<br>
+④调节比大，即调节器的最大与最小可调流量之比（即节流能力）要大，这对于变推力发动机尤其重要。<br>
+⑤尽量减少干扰因素对调节器的影响，如减少进口压力的波动和减小运动件的摩擦等。<br>
+⑥ 合理设计流道，使压降尽量集中在节流部位，并尽量降低节流部位的最小压降。</p>
+<h2 id="6-12-减压器有哪些分类？">6-12 减压器有哪些分类？</h2>
+<p>气体减压器是将高压气体经阀芯节流减压为恒定的较低的输出压力，当进口压力变化很大时,要求出口压力在给定的精度范围内变化。<br>
+按敏感元件分：膜片式减压器、膜盒式减压器、柱塞式减压器<br>
+按用途分：流量减压器，指挥减压器<br>
+按性能分：不卸荷的正向减压器、不卸荷的逆向减压器、卸荷式逆向减压器<br>
+按有无基准弹簧分：有基准弹簧减压器、无基准弹簧减压器</p>
+<h2 id="6-13-试分析减压器的功能、结构和工作过程。">6-13 试分析减压器的功能、结构和工作过程。</h2>
+<p><img src="/img/%E6%B6%B2%E5%8F%91/image040.png" alt=""></p>
+<style>
+    p img{
+        border: solid lightblue 1px;
+    }
+</style></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://clancycc.github.io">ClancyCC</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://clancycc.github.io/2021/12/05/LRE_design/6-6%20%E9%98%80%E9%97%A8%E5%92%8C%E8%B0%83%E8%8A%82%E5%99%A8%E8%AE%BE%E8%AE%A1/">https://clancycc.github.io/2021/12/05/LRE_design/6-6%20%E9%98%80%E9%97%A8%E5%92%8C%E8%B0%83%E8%8A%82%E5%99%A8%E8%AE%BE%E8%AE%A1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://clancycc.github.io" target="_blank">ClancyCC</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/%E6%B6%B2%E5%8F%91/%E7%BB%AA%E8%AE%BA.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/ShareJS/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/ShareJS/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/12/12/DataFrame/1-8%E7%BB%AA%E8%AE%BA/"><img class="prev-cover" src="/2021/12/12/DataFrame/1-8%E7%BB%AA%E8%AE%BA/Untitled.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">1/8 绪论</div></div></a></div><div class="next-post pull-right"><a href="/2021/12/05/LRE_design/5-6%20%E6%B6%A1%E8%BD%AE%E6%B3%B5%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%B8%8B%E5%8D%8A%EF%BC%89/"><img class="next-cover" src="/img/%E6%B6%B2%E5%8F%91/%E7%BB%AA%E8%AE%BA.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">5/6 涡轮泵设计（下半）</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/JLLJ.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ClancyCC</div><div class="author-info__description">尝试热爱生活！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ClancyCC" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.zhihu.com/people/zhu-qing-cheng" target="_blank" title="zhihu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="mailto:zqc867342167@gmail.com" target="_blank" title="Email:zqc867342167@gmail.com"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%98%80%E9%97%A8%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%85%B6%E5%8A%9F%E8%83%BD%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">6-1 发动机阀门的定义及其功能是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-%E9%98%80%E9%97%A8%E6%8C%89%E5%8A%9F%E8%83%BD%E5%8F%AF%E5%88%86%E4%B8%BA%E5%93%AA%E5%87%A0%E7%B1%BB%EF%BC%9F"><span class="toc-text">6-2 阀门按功能可分为哪几类？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-%E7%AE%80%E8%BF%B0%E5%8F%91%E5%8A%A8%E6%9C%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4%E3%80%82"><span class="toc-text">6-3 简述发动机控制系统设计的基本步骤。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-%E9%98%80%E9%97%A8%E5%92%8C%E8%B0%83%E8%8A%82%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">6-4 阀门和调节器的分类方式有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-5-%E7%AE%80%E8%BF%B0%E9%98%80%E9%97%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%9D%A1%E4%BB%B6%E3%80%82"><span class="toc-text">6-5 简述阀门的工作条件。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-6-%E7%AE%80%E8%BF%B0%E9%98%80%E9%97%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AE%BE%E8%AE%A1%E8%A6%81%E6%B1%82%E3%80%82"><span class="toc-text">6-6 简述阀门的基本设计要求。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-7-%E9%98%80%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%BB%E8%A6%81%E5%9B%A0%E7%B4%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">6-7 阀门设计的主要因素有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-8-%E8%AF%95%E5%88%86%E6%9E%90%E6%96%AD%E6%B5%81%E9%98%80%E9%97%A8%EF%BC%88%E8%9D%B6%E5%BD%A2%E9%98%80%E3%80%81%E8%8F%8C%E5%BD%A2%E9%98%80%E3%80%81%E7%94%B5%E7%88%86%E9%98%80%EF%BC%89%E7%9A%84%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%93%E6%9E%84%E5%92%8C%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B%E3%80%82"><span class="toc-text">6-8 试分析断流阀门（蝶形阀、菌形阀、电爆阀）的功能、结构和工作过程。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-9-%E8%AF%95%E5%88%86%E6%9E%90%E9%9A%94%E7%A6%BB%E9%98%80%E9%97%A8%EF%BC%88%E8%86%9C%E7%89%87%E5%BC%8F%E8%9D%B6%E5%BD%A2%E9%98%80%E3%80%81%E7%90%83%E5%BD%A2%E9%98%80%E7%AD%89%EF%BC%89%E7%9A%84%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%93%E6%9E%84%E5%92%8C%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B%E3%80%82"><span class="toc-text">6-9 试分析隔离阀门（膜片式蝶形阀、球形阀等）的功能、结构和工作过程。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-10-%E8%AF%95%E5%88%86%E6%9E%90%E5%85%B6%E4%BB%96%E9%98%80%E9%97%A8%EF%BC%88%E7%94%B5%E5%8A%A8%E6%B0%94%E9%98%80%E5%92%8C%E7%94%B5%E7%A3%81%E9%98%80%EF%BC%89%E7%9A%84%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%93%E6%9E%84%E5%92%8C%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B%E3%80%82"><span class="toc-text">6-10 试分析其他阀门（电动气阀和电磁阀）的功能、结构和工作过程。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-11-%E8%B0%83%E8%8A%82%E5%99%A8%E7%9A%84%E4%B8%BB%E8%A6%81%E8%AE%BE%E8%AE%A1%E8%A6%81%E6%B1%82%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">6-11 调节器的主要设计要求有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-12-%E5%87%8F%E5%8E%8B%E5%99%A8%E6%9C%89%E5%93%AA%E4%BA%9B%E5%88%86%E7%B1%BB%EF%BC%9F"><span class="toc-text">6-12 减压器有哪些分类？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-13-%E8%AF%95%E5%88%86%E6%9E%90%E5%87%8F%E5%8E%8B%E5%99%A8%E7%9A%84%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%93%E6%9E%84%E5%92%8C%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B%E3%80%82"><span class="toc-text">6-13 试分析减压器的功能、结构和工作过程。</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/30/Bibliography/221030/" title="某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析"><img src="/2022/10/30/Bibliography/221030/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析"/></a><div class="content"><a class="title" href="/2022/10/30/Bibliography/221030/" title="某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析">某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析</a><time datetime="2022-10-30T15:59:00.000Z" title="更新于 2022-10-30 23:59:00">2022-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/26/Bibliography/221026/" title="蒙特卡洛方法/灵敏度分析/正态性检验"><img src="/2022/10/26/Bibliography/221026/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="蒙特卡洛方法/灵敏度分析/正态性检验"/></a><div class="content"><a class="title" href="/2022/10/26/Bibliography/221026/" title="蒙特卡洛方法/灵敏度分析/正态性检验">蒙特卡洛方法/灵敏度分析/正态性检验</a><time datetime="2022-10-28T15:59:00.000Z" title="更新于 2022-10-28 23:59:00">2022-10-28</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2022 By ClancyCC</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '3Cc9dQ6tYozmndx61LzWR8Q9-gzGzoHsz',
+      appKey: '7P0KFSu16TPeGa4SeFt8zvgv',
+      avatar: 'monsterid',
+      serverURLs: 'https://3cc9dq6t.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('/pluginsSrc/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><link rel="service workers_delete" href="/js/sw_delete.js"><script src="/pluginsSrc/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = false;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/qq2vbwkt5or4kfzsneq1etvxxeemubrw.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="js/githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://gitcalendar.zfe.space/api?ClancyCC";
+            var git_color =['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'];
+            var git_user ="ClancyCC";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>

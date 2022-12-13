@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>2-8 运算方法和运算器（上） | ClancyCC</title><meta name="author" content="ClancyCC"><meta name="copyright" content="ClancyCC"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="2.1 数据与文字的表示方法 2.1.1 进位计数制   为什么二进制广泛： ①可使用两个稳定状态的物理器件表示； ②0，1正好对应逻辑值假、真，方便实现逻辑运算； ③可很方便地使用逻辑门电路实现算术运算； 掌握二进制和八进制十六进制的转化： 二进制三位对应八进制中一位，四位对应十六进制一位（注意补位）    除基取余法和乘基取整法将十进制转化为任意进制     2.1.2 BCD码 Binary">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2-8 运算方法和运算器（上）">
+<meta property="og:url" content="https://clancycc.github.io/2022/03/16/CompositionComputer/2-8%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E5%99%A8%EF%BC%88%E4%B8%8A%EF%BC%89/index.html">
+<meta property="og:site_name" content="ClancyCC">
+<meta property="og:description" content="2.1 数据与文字的表示方法 2.1.1 进位计数制   为什么二进制广泛： ①可使用两个稳定状态的物理器件表示； ②0，1正好对应逻辑值假、真，方便实现逻辑运算； ③可很方便地使用逻辑门电路实现算术运算； 掌握二进制和八进制十六进制的转化： 二进制三位对应八进制中一位，四位对应十六进制一位（注意补位）    除基取余法和乘基取整法将十进制转化为任意进制     2.1.2 BCD码 Binary">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://clancycc.github.io/2022/03/16/CompositionComputer/2-8%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E5%99%A8%EF%BC%88%E4%B8%8A%EF%BC%89/Untitled.png">
+<meta property="article:published_time" content="2022-03-16T04:08:00.000Z">
+<meta property="article:modified_time" content="2022-03-18T13:36:01.053Z">
+<meta property="article:author" content="ClancyCC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://clancycc.github.io/2022/03/16/CompositionComputer/2-8%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E5%99%A8%EF%BC%88%E4%B8%8A%EF%BC%89/Untitled.png"><link rel="shortcut icon" href="/img/icon_JLLJ.png"><link rel="canonical" href="https://clancycc.github.io/2022/03/16/CompositionComputer/2-8%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E5%99%A8%EF%BC%88%E4%B8%8A%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="9eU0cX-hA0E9CraoJpb6hliI6Aju-pcMWbF9MsmCyaw"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2-8 运算方法和运算器（上）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-18 21:36:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/modify.css"><meta name="generator" content="Hexo 6.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/JLLJ.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/2022/03/16/CompositionComputer/2-8%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E5%99%A8%EF%BC%88%E4%B8%8A%EF%BC%89/Untitled.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ClancyCC</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2-8 运算方法和运算器（上）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-16T04:08:00.000Z" title="发表于 2022-03-16 12:08:00">2022-03-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-18T13:36:01.053Z" title="更新于 2022-03-18 21:36:01">2022-03-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E3%80%8B/">《计算机组成原理》</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>2.1 数据与文字的表示方法</h1>
+<h2 id="2-1-1-进位计数制">2.1.1 进位计数制</h2>
+<p><img src="Untitled.png" alt=""></p>
+<ul>
+<li>为什么二进制广泛：<br>
+①可使用两个稳定状态的物理器件表示；<br>
+②0，1正好对应逻辑值假、真，方便实现逻辑运算；<br>
+③可很方便地使用逻辑门电路实现算术运算；</li>
+<li>掌握二进制和八进制十六进制的转化：<br>
+二进制三位对应八进制中一位，四位对应十六进制一位（注意<strong>补位</strong>）</li>
+</ul>
+<p><img src="Untitled%201.png" alt=""></p>
+<ul>
+<li>除基取余法和乘基取整法将十进制转化为任意进制</li>
+</ul>
+<p><img src="Untitled%202.png" alt=""></p>
+<p><img src="Untitled%203.png" alt=""></p>
+<p><img src="Untitled%204.png" alt=""></p>
+<h2 id="2-1-2-BCD码-Binary-Coded-Decimal">2.1.2 BCD码 Binary-Coded Decimal</h2>
+<blockquote>
+<p>8421码：用四个二进制的表示十进制的一位，在做加法的时候可以+6修正</p>
+</blockquote>
+<p><img src="Untitled%205.png" alt=""></p>
+<p><img src="Untitled%206.png" alt=""></p>
+<p><img src="Untitled%207.png" alt=""></p>
+<h2 id="2-1-3-字符和字符串">2.1.3 字符和字符串</h2>
+<p>ACSII码：</p>
+<p><img src="Untitled%208.png" alt=""></p>
+<p><img src="Untitled%209.png" alt=""></p>
+<p><img src="Untitled%2010.png" alt=""></p>
+<p><img src="Untitled%2011.png" alt=""></p>
+<h2 id="2-1-4-奇偶校验码">2.1.4 奇偶校验码</h2>
+<p><img src="Untitled%2012.png" alt=""></p>
+<p><img src="Untitled%2013.png" alt=""></p>
+<p><img src="Untitled%2014.png" alt=""></p>
+<p><img src="Untitled%2015.png" alt=""></p>
+<h2 id="2-1-5-海明码">2.1.5 海明码</h2>
+<p><img src="Untitled%2016.png" alt=""></p>
+<p><img src="Untitled%2017.png" alt=""></p>
+<p><img src="Untitled%2018.png" alt=""></p>
+<h2 id="2-1-6-循环冗余校验码">2.1.6 循环冗余校验码</h2>
+<p><img src="Untitled%2019.png" alt=""></p>
+<p><img src="Untitled%2020.png" alt=""></p>
+<p><img src="Untitled%2021.png" alt=""></p>
+<h2 id="2-2-1-无符号数和原码">2.2.1 无符号数和原码</h2>
+<p><img src="Untitled%2022.png" alt=""></p>
+<ul>
+<li>原码就是在真值的基础上把符号用符号位表示（0表正，1表负），为了满足字长要求，小数在末尾添0，整数符号位和真值最高位中添0。当然计算机的做法是，正就添0，负就加上一个数</li>
+</ul>
+<p><img src="Untitled%2023.png" alt=""></p>
+<p><img src="Untitled%2024.png" alt=""></p>
+<ul>
+<li>补码的作用是把减法转换为加法，（其实是把加一个负数改为加另一个负数，就像下面的图片中，加一个负数其实是减去它的绝对值，同时又因为再加上一个”比特数更高的数“能够使所需位数正确，所以这个过程就是取反+1），因此正数没有补码（或者说是其本身），负数的补码：符号位与原码相同，其余数值位由原码取反+1</li>
+</ul>
+<p><img src="Untitled%2025.png" alt=""></p>
+<ul>
+<li>反码：正数的反码是其本身，负数的反码是：符号位不变</li>
+</ul>
+<h1>补充：</h1>
+<h2 id="▲浮点数的格式：">▲浮点数的格式：</h2>
+<p>在计算机中一个任意进制数N 可以写成</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><msup><mi>R</mi><mi>E</mi></msup><mo>∗</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">N=R^E*M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8413em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05764em;">E</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span><br>
+其中M称为浮点数的尾数，是一个纯小数，E 是比例因子的指数，称为浮点数的阶码，是一个整数。比例因子的基数R对于确定了计数制的机器是一个常数，一般规定R 为 2, 8 或 16 ,不需要在浮点数中明确表示出来.</p>
+<p><img src="Untitled%2026.png" alt=""></p>
+<p>浮点数所表示的范围远比定点数大.假设机器中的数由8位二进制数表示（包括符号位）：在定点机中这8 位全部用来表示有效数字（包括符号）：在浮点机中若阶符阶码占3位，数符尾数占5位,在此情况下，若只考虑正数值，定点机小数表示的数的范围是 0.0000000到 0.1111111 , 相当于十进制数的0到127/128,而浮点机所能表示的数的 范围则是2^(-11) X0.0001到 2^(-11) X0.0001 ,相当于十进制数的1/128到 7.5 . 显然，都用8位，浮点机能表示的数的范围比定点机大得多.</p>
+<h2 id="▲移码表示法和实例">▲移码表示法和实例</h2>
+<p><img src="Untitled%2027.png" alt=""></p>
+<p><img src="Untitled%2028.png" alt=""></p>
+<h2 id="▲关于模2运算">▲关于模2运算</h2>
+<p>可访问链接：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A8%A12%E8%BF%90%E7%AE%97/18556715?fr=aladdin">https://baike.baidu.com/item/模2运算/18556715?fr=aladdin</a></p>
+<p><img src="Untitled%2029.png" alt=""></p>
+<style>
+    p img{
+        /* width: 80%; */
+        border: solid black 1px;
+    }
+</style></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://clancycc.github.io">ClancyCC</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://clancycc.github.io/2022/03/16/CompositionComputer/2-8%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E5%99%A8%EF%BC%88%E4%B8%8A%EF%BC%89/">https://clancycc.github.io/2022/03/16/CompositionComputer/2-8%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E5%99%A8%EF%BC%88%E4%B8%8A%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://clancycc.github.io" target="_blank">ClancyCC</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/2022/03/16/CompositionComputer/2-8%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E5%99%A8%EF%BC%88%E4%B8%8A%EF%BC%89/Untitled.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/ShareJS/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/ShareJS/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/24/tech/Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E7%BD%AE/"><img class="prev-cover" src="/img/valine.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Valine评论系统的设置</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/14/CompositionComputer/1-8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%86%B5/"><img class="next-cover" src="/2022/03/14/CompositionComputer/1-8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%86%B5/Untitled.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">1-8计算机系统概况</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/JLLJ.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ClancyCC</div><div class="author-info__description">尝试热爱生活！</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ClancyCC" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.zhihu.com/people/zhu-qing-cheng" target="_blank" title="zhihu"><i class="fab fa-zhihu"></i></a><a class="social-icon" href="mailto:zqc867342167@gmail.com" target="_blank" title="Email:zqc867342167@gmail.com"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">2.1 数据与文字的表示方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-1-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6"><span class="toc-text">2.1.1 进位计数制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-2-BCD%E7%A0%81-Binary-Coded-Decimal"><span class="toc-text">2.1.2 BCD码 Binary-Coded Decimal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-3-%E5%AD%97%E7%AC%A6%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">2.1.3 字符和字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-4-%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="toc-text">2.1.4 奇偶校验码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-5-%E6%B5%B7%E6%98%8E%E7%A0%81"><span class="toc-text">2.1.5 海明码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-6-%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A0%A1%E9%AA%8C%E7%A0%81"><span class="toc-text">2.1.6 循环冗余校验码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-1-%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E5%92%8C%E5%8E%9F%E7%A0%81"><span class="toc-text">2.2.1 无符号数和原码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">补充：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%96%B2%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-text">▲浮点数的格式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%96%B2%E7%A7%BB%E7%A0%81%E8%A1%A8%E7%A4%BA%E6%B3%95%E5%92%8C%E5%AE%9E%E4%BE%8B"><span class="toc-text">▲移码表示法和实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%96%B2%E5%85%B3%E4%BA%8E%E6%A8%A12%E8%BF%90%E7%AE%97"><span class="toc-text">▲关于模2运算</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/30/Bibliography/221030/" title="某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析"><img src="/2022/10/30/Bibliography/221030/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析"/></a><div class="content"><a class="title" href="/2022/10/30/Bibliography/221030/" title="某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析">某型火箭发动机涡轮转子流热固耦合强度及疲劳寿命分析</a><time datetime="2022-10-30T15:59:00.000Z" title="更新于 2022-10-30 23:59:00">2022-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/26/Bibliography/221026/" title="蒙特卡洛方法/灵敏度分析/正态性检验"><img src="/2022/10/26/Bibliography/221026/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="蒙特卡洛方法/灵敏度分析/正态性检验"/></a><div class="content"><a class="title" href="/2022/10/26/Bibliography/221026/" title="蒙特卡洛方法/灵敏度分析/正态性检验">蒙特卡洛方法/灵敏度分析/正态性检验</a><time datetime="2022-10-28T15:59:00.000Z" title="更新于 2022-10-28 23:59:00">2022-10-28</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2022 By ClancyCC</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '3Cc9dQ6tYozmndx61LzWR8Q9-gzGzoHsz',
+      appKey: '7P0KFSu16TPeGa4SeFt8zvgv',
+      avatar: 'monsterid',
+      serverURLs: 'https://3cc9dq6t.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('/pluginsSrc/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><link rel="service workers_delete" href="/js/sw_delete.js"><script src="/pluginsSrc/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = false;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="//code.tidio.co/qq2vbwkt5or4kfzsneq1etvxxeemubrw.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="js/githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://gitcalendar.zfe.space/api?ClancyCC";
+            var git_color =['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'];
+            var git_user ="ClancyCC";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
